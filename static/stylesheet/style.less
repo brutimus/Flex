@@ -44,9 +44,10 @@ body {
   padding: 0;
   background-color: @body-bg;
   color: @text-color;
-  font-family: @sans;
+  font-family: @serif;
   font-size: 1.02em;
-  line-height: 1.2em;
+  line-height: 1.75em;
+  letter-spacing: .01rem;
 }
 
 a {
@@ -72,6 +73,7 @@ img {
 }
 
 aside {
+  font-family: @sans;
   background-color: @sidebar-bg;
   color: @sidebar-text-color;
   text-align: center;
@@ -99,7 +101,11 @@ aside {
 
     p {
       margin: 0 0 15px 0;
-      font-size: .92em;
+      font-size: .9em;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: darken(@sidebar-text-color, 50%);
+      letter-spacing: 1px;
     }
   }
 
@@ -107,9 +113,11 @@ aside {
     ul {
       li {
         display: inline;
-        line-height: 1.6em;
-        font-size: 1.28em;
-        text-transform: lowercase;
+        line-height: 1.7em;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: .03rem;
+        text-transform: uppercase;
       }
     }
   }
@@ -167,6 +175,7 @@ main {
       p {
         color: @header-text-color;
         font-size: 0.86em;
+        font-family: @sans;
       }
 
       .translations {
@@ -262,6 +271,7 @@ main {
       padding: 0 40px 0 40px;
       color: @footer-text-color;
       font-size: 11px;
+      font-family: @sans;
     }
   }
 }
@@ -271,6 +281,7 @@ main {
     background-color: @tag-bg;
     padding: .2em .6em .2em;
     font-size: .74em;
+    font-family: @sans;
     line-height: 1;
     color: @tag-text-color;
     text-align: center;
@@ -288,6 +299,7 @@ a.btn {
   background-color: @btn-bg;
   padding: .6em .6em;
   font-size: .8em;
+  font-family: @sans;
   line-height: 1;
   color: @btn-text-color;
   text-align: center;

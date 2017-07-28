@@ -7,21 +7,18 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-
-  {% if USE_LESS %}
-    <link rel="stylesheet/less" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/style.less">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
-  {% else %}
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/stylesheet/style.min.css">
-  {% endif %}
-
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE|default('github') }}.min.css">
+  <link href='//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400,300|Anonymous+Pro' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/font-awesome/css/font-awesome.min.css">
 
-  {% if CUSTOM_CSS %}
-    <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
-  {% endif %}
+  {#<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/pygments/{{ PYGMENTS_STYLE|default('github') }}.min.css">#}
+
+  {% assets
+    filters="less,cssmin",
+    output="stylesheet/style.min.css",
+    "stylesheet/style.less",
+    "stylesheet/custom.less" %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+{% endassets %}
 
   {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom">
@@ -40,6 +37,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="p:domain_verify" content="c265e6cb05857500db9ffe556462eeac"/>
   {% if page in hidden_pages %}
     <meta name="robots" content="noindex, nofollow" />
   {% else %}
@@ -104,7 +102,7 @@
           {% endfor %}
 
           {% for name, link in LINKS %}
-          <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+          <li><a href="{{ link }}">{{ name }}</a></li>
           {% endfor %}
         </ul>
       </nav>
@@ -192,5 +190,7 @@
   {% if GITHUB_CORNER_URL %}
   {% include 'partial/github.html' %}
   {% endif %}
+
+  <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=5089436f-ceee-47b1-bc15-16a613a0089d"></script>
 </body>
 </html>
