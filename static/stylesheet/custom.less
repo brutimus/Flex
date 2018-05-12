@@ -108,6 +108,124 @@ body {
   }
 }
 
+#photo-grid {
+  width: @article-overflow;
+  margin-left: -((@article-overflow - 100) / 2);
+}
+
+.photo-index-preview {
+  display: flex;
+  flex-direction: row;
+  // width: @article-overflow;
+  // margin-left: -((@article-overflow - 100) / 2);
+
+  .photo-index-thumb {
+    // flex-grow: 1;
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  .photo-index-thumb:not(:last-child) {
+    margin-right: 2px;
+  }
+}
+
+.gallery-wrapper {
+  margin: 0;
+  max-width: inherit;
+  // width: @article-overflow;
+  // margin-left: -((@article-overflow - 100) / 2);
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: center;
+
+  .photo {
+    // max-height: 20vh;
+      // object-fit: cover;
+      // margin: 2px;
+    img {
+      // height: 100%;
+      
+    }
+  }
+}
+
+#mc_embed_signup {
+  // background-color: lighten(@sidebar-bg, 10%);
+  border-top: 1px solid @light-grey;
+  border-bottom: 1px solid @light-grey;
+  background-color: @light-grey;
+
+  form {
+    display:block;
+    position:relative;
+    text-align:center;
+    padding:10px 0 10px 0}
+  input {border:none;}  
+  .clear {clear:none; display:inline;}
+  label {
+    display:block;
+    padding-bottom:5px;
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.03rem;
+  }
+  input.email {
+    font-size: 0.9em;
+    font-weight: 200;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    display:block;
+    padding:0 0.4em;
+    margin:0 auto 10px auto;
+    min-height:32px;
+    max-width: 400px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+  }
+  input.button {
+    display:inline-block;
+    width:40%;
+    margin:0 auto;
+
+    background-color: @btn-bg;
+    padding: .6em .6em;
+    font-size: .8em;
+    font-family: @sans;
+    line-height: 1;
+    color: @btn-text-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+  }
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+
+  .gsc-input input {
+    background: none !important;
+    text-indent: none !important;
+  }
+  .gsc-search-box {
+    margin-bottom: 0 !important;
+  }
+}
+.gcsc-branding {
+  line-height: normal;
+}
+
+
 @media (max-width: 480px) {
   .index-grid {
     flex-direction: column;
@@ -127,5 +245,8 @@ body {
     width: 100%;
     float: none;
     margin: 0 0 20px 0;
+  }
+  .gallery .photo {
+    max-height: 10vh;
   }
 }

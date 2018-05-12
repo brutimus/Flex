@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} &ndash; {{ page.title }}{% endblock %}
+{% block title %}{% if page.title|trim %}{{ page.title }} | {% endif %}{% endblock %}
 
 {% block content %}
 <article class="single">

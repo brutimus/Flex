@@ -7,24 +7,29 @@
 @med-grey:  #999999;
 @dark-grey: #242121;
 
+// Article padding adjustment
+
+@article-overflow: 120%;
+@article-margin-left-adjustment: -10%;
+
 // Font family
-@serif: 'Merriweather', serif;
-@sans: 'Open Sans', 'Verdana', sans-serif;
+@serif: 'Spectral', serif;
+@sans: 'Roboto', 'Verdana', sans-serif;
 @mono: 'Anonymous Pro', 'Consolas', monospace;
 
 // Body
 @body-bg: @white;
-@text-color: #3A4145;
+@text-color: @dark-grey;
 
 // Links
 @link-color: @orange;
 @link-hover-color: @light-orange;
 
 // Sidebar (aside)
-@sidebar-bg: @grey;
-@sidebar-text-color: @white;
-@sidebar-link-color: @white;
-@sidebar-link-hover-color: @light-grey;
+@sidebar-bg: #fafafa;
+@sidebar-text-color: @text-color;
+@sidebar-link-color: @text-color;
+@sidebar-link-hover-color: @orange;
 
 // Buttons
 @btn-bg: @orange;
